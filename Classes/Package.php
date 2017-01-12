@@ -38,8 +38,8 @@ class Package extends BasePackage
                 $span = Profiler::createSpan('fusion-runtime');
 
                 // 0 = $typoScriptPath
-                $title = $context['args'][0];
-                $span->annotate(['title' => $title]);
+                $typoScriptPath = $context['args'][0];
+                $span->annotate(['title' => 'Fusion render()', 'typoScriptPath' => $typoScriptPath]);
 
                 return $span->getId();
             }
@@ -51,8 +51,8 @@ class Package extends BasePackage
                 $span = Profiler::createSpan('fusion-parser');
 
                 // 0 = $sourceCode, 1 = $contextPathAndFilename
-                $title = isset($context['args'][1]) ? $context['args'][1] : substr($context['args'][0], 0, 20);
-                $span->annotate(['title' => 'Parse(' . $title . ')']);
+                $sourceCode = isset($context['args'][1]) ? $context['args'][1] : substr($context['args'][0], 0, 20);
+                $span->annotate(['title' => 'Fusion parse()', 'sourceCode' => $sourceCode]);
 
                 return $span->getId();
             }
