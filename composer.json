@@ -1,0 +1,15 @@
+{
+    "name": "flownative/neos-tideways",
+    "type": "neos-package",
+    "description": "Tideways instrumentation for Neos",
+    "license": "MIT",
+    "require": {
+        "ext-tideways": "*",
+        "typo3/neos": "~2.3 || ~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Flownative\\Neos\\Tideways\\": "Classes"
+        }
+    }
+}
